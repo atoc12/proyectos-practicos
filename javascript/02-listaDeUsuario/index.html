@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../font/fontawesome-free-6.3.0-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Creador</title>
+</head>
+<body>
+    <div id="contenedor">
+        <nav id="navigator">
+            <div id="navbtn">
+                <i class="fa-solid fa-plus"></i>
+            </div>
+            <section class="barra" style="height:0px;overflow: hidden;">
+                <button onclick="create()">
+                    <i class="fa-solid fa-user-plus"></i>
+                    <span class="tooltip">añadir</span>
+                </button>
+                <button onclick="mostrar('userList')">
+                    <i class="fa-solid fa-users"></i>
+                    <span  class="tooltip">lista de usuario</span>
+                </button>
+            </section>
+        </nav>
+        <div id="formularios" >
+                <div id="userAdd">
+                    <button class="btn" id="userbtn" onclick="create()" ><i class="fa-solid fa-xmark"></i></button>
+                    <form>
+                        <label for="name" class="inputLabel">
+                            <input type="text" name="user" id="user" required>
+                            <span>nombre</span>
+                        </label>
+                        <label for="pass" class="inputLabel">
+                            <input type="password" name="pass" id="pass" required>
+                            <span>contraseña</span>
+                        </label>
+                        <button class="btn btn-primary">añadir</button>
+                    </form>
+                </div>
+        </div>
+        <div>
+            <form id="ingresar">
+                <section>
+                    <section>
+                        <input type="text" name="nombre" id="nombre">
+                    </section>
+                    <section>
+                        <input type="password" name="contraseña" id="contraseña">
+                    </section>
+                </section>
+                <section>
+                    <input type="submit" value="enviar">
+                </section>
+            </form>
+        </div>
+        <div id="cuerpo">
+            <div id="userList">
+                <table class="tabla">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Contraseña</th>
+                            <th>Fecha</th>
+                            <th>Hora</th>
+                            <th>opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data">
+
+                    </tbody>
+                </table>
+            </div>
+    </div>
+    <script src="../font/fontawesome-free-6.3.0-web/js/all.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

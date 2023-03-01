@@ -1,0 +1,278 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Roboto', sans-serif;
+}
+:root{
+    --locat : -200%;
+}
+nav{
+    left: 15px;
+    bottom: 15px;
+    position: fixed;
+}
+#navbtn{
+    z-index: 9909;
+    cursor: pointer;
+    padding: 0.5em;
+    width: 25px;
+    display: flex;
+    height: 25px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(8, 81, 81);
+    color: rgba(9, 212, 243, 0.583);
+    border-radius: 50%;
+    font-size: 30px;
+    box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.701);
+    transition: all 200ms linear;
+    animation: moveEfect 200ms linear forwards;
+}
+#navbtn:hover{
+    background-color: rgb(8, 54, 54);
+    color: rgb(70, 230, 230);
+}
+.barra{
+    position: absolute;
+    background-color: rgb(8, 81, 81);
+    border-radius: 1em 0em 1em 0em;
+    transition: all 200ms linear;
+    box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.559);
+}
+.barra>button{
+    position: relative;
+    cursor: pointer;
+    color: rgba(9, 212, 243, 0.583);
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: none;
+    transition: all 200ms linear;
+}
+#userbtn{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    padding: 1em;
+    border-radius: 5px;
+}
+#userbtn:hover{
+    background-color: rgb(188, 32, 32);
+    color: rgba(34, 3, 3, 0.431);
+}
+.barra>button:active{
+    transform: scale(0.8);
+}
+.barra>button:first-child{
+    border-radius: 1em 0em 0em 0em;
+}
+.barra>button:hover>span{
+    display: flex;
+    opacity: 1;
+}
+.barra>button:hover{
+    color: rgb(70, 230, 230);
+    background-color: rgb(8, 54, 54);
+}
+.barra{
+    width: 100%;
+    height: 100%;
+    bottom: 110%;
+}
+
+#contenedor{
+    height: 100vh;
+    background: linear-gradient(45deg ,rgb(8, 8, 51),black);
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 10% 80% 10%;
+}
+#ingresar{
+    display: none;
+}
+
+.tooltip{
+    transition: all 200ms linear;
+    position: absolute;
+    display: none;
+    opacity: 0;
+    top: 0;
+    left: 110%;
+    max-width: 100px;
+    min-width: 50px;
+    padding: 1em;
+    background-color: black;
+    border-radius: 1em;
+    box-shadow: 0px 0px 10px 2px black;
+}
+.tooltip::after{
+    content: "";
+    position: absolute;
+    bottom: 35%;
+    right: 90%;
+    margin-left: -10px;
+    border-width: 10px 10px 0 10px;
+    rotate: 90deg;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+#formularios{
+    transform: translateY(var(--locat));
+    position: fixed;
+    padding: 2em 1em 1em 1em;
+    top: 10px;
+    left: 37%;
+    width: 300px;
+    background-color: white;
+    box-shadow: 0px 0px 25px 10px rgba(0, 0, 0, 0.559);
+    transition: all 1s linear;
+    border-radius: 10px;
+    height: min-content;
+    z-index: 999;
+}
+#formularios>div{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+#formularios>div>form{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2em;
+}
+.inputLabel{
+    position: relative;
+    z-index: 9;
+    cursor: pointer;
+}
+.inputLabel>span{
+    display: block;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    position: absolute;
+    transition: all 200ms linear;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+    background-color: white;
+    padding: 0.2em;
+}
+.inputLabel>input:focus + span{
+    border-left: 2px solid aqua;
+    border-right: 2px solid aqua;
+    top: -10%;
+}
+.inputLabel>input:valid + span{
+    border-left: 2px solid aqua;
+    border-right: 2px solid aqua;
+    top: -10%;
+}
+.inputLabel>input{
+    border: none;
+    outline: none;
+    background: none;
+    border: 2px solid cyan;
+    padding: 0.5em;
+}
+.btn{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+    transition: all 200ms linear;
+}
+.btn-primary{
+    padding: 0.5em 1em 0.5em 1em;
+    color: rgba(23, 220, 220, 0.652);
+    background-color: rgb(6, 91, 91);
+    border-radius: 10px;
+    font-size: 15px;
+}
+.btn-primary:hover{
+    transform: scale(1.1);
+    background-color: rgb(8, 137, 137);
+    color: rgba(17, 237, 237, 0.937);
+}
+.btn-primary:active{
+    transform: scale(0.8);
+}
+
+#cuerpo{
+    grid-column: 2/2;
+    grid-row: 2/2;
+    background-color: white;
+    border-radius: 5px;
+}
+
+@keyframes moveEfect{
+    0%{
+        opacity: 0;
+        
+        transform: translateX(-100%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+#userList{
+    display: none;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    animation: opacidad 200ms linear forwards;
+}
+.tabla{
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+}
+.tabla>thead{
+    width: 100%;
+}
+.tabla>thead>tr{
+    height: 100px;
+    color: rgba(0, 255, 255, 0.526);
+    background-color: rgb(4, 49, 49);
+
+}
+.tabla>tbody{
+    width: 100%;
+}
+.tabla>tbody>tr{
+    text-align: center;
+    height: 50px;
+}
+.tabla>tbody>tr>td>button{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 0.5em;
+}
+.tabla>tbody>tr>td>button:nth-child(2){
+    background-color: rgb(211, 6, 6);
+    color: rgba(255, 255, 255, 0.404);
+}
+.tabla>tbody>tr>td>button:nth-child(1){
+    background-color: rgb(11, 95, 81);
+    color: rgba(6, 243, 239, 0.707);
+    border: 2px solid cyan;
+    border-radius: 5px;
+}
+.tabla>tbody>tr:nth-child(even){
+    background-color: rgb(8, 137, 137);
+    color: white;
+}
+@keyframes opacidad {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
